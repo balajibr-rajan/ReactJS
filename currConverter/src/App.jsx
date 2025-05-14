@@ -30,6 +30,8 @@ var CurrencyConverter = () => {
       fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
         .then((res) => res.json())
         .then((data) => {
+          console.log(data.rates[toCurrency]);
+
           setExchangeRate(data.rates[toCurrency]);
         });
     }
@@ -59,6 +61,7 @@ var CurrencyConverter = () => {
             Currency Converter
           </Typography>
         </header>
+
         {/* <p>Input value</p> */}
 
         <div className="flex space-x-2">
